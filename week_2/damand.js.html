@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    </meta>
+    <title>Javascript</title>
+    <script type="text/javascript">
+
+
+        //要求一
+        function calculate(min, max) {
+            var sum = 0;
+            var n = min;
+            while (n <= max) {
+                sum = sum + n;
+                n++;
+            }
+            console.log(sum)
+        }
+        calculate(1, 3);
+        calculate(4, 8);
+
+
+        //要求二
+        function avg(data) {
+            salary = 0;
+            for (i = 0; i < data["employees"].length; i++) {
+                salary = salary + data["employees"][i]["salary"]
+            }
+            console.log(salary / data.count)
+        }
+
+        avg(
+            {
+                "count": 3,
+                "employees": [
+                    {
+                        "name": "John",
+                        "salary": 30000
+                    },
+                    {
+                        "name": "Bob",
+                        "salary": 60000
+                    },
+                    {
+                        "name": "Jenny",
+                        "salary": 50000
+                    }
+                ]
+            }
+        );
+
+        //要求三
+        function maxProduct(nums) {
+            for (i = 0; i < nums.length; i++) {
+                for (j = i + 1; j < nums.length; j++) {
+                    if (i == 0 & j == 1) {
+                        current = nums[i] * nums[j]
+                    } else {
+                        if (nums[i] * nums[j] > current) {
+                            current = nums[i] * nums[j]
+                        }
+                    }
+                }
+            }
+            console.log(current)
+        };
+
+        maxProduct([5, 20, 2, 6]);
+        maxProduct([10, -20, 0, 3]);
+
+        //要求四
+        function twoSum(nums, target) {
+            for (i = 0; i < nums.length; i++) {
+                for (j = i + 1; j < nums.length; j++) {
+                    if (nums[i] + nums[j] == target) {
+                        result = [i, j]
+                    }
+                }
+            }
+            console.log(result)
+        }
+        result = twoSum([2, 11, 7, 15], 9)
+        //要求五
+        function maxZeros(nums) {
+            count = 0
+            maxcount = 0
+            for (i = 0; i < nums.length; i++) {
+                if (nums[i] == 0) {
+                    count = count + 1
+                } else { count = 0 }
+
+                if (maxcount < count) { maxcount = count }
+            }
+            return maxcount
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
