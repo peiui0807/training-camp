@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>HW week1</title>
+    <script type="text/javascript">
+        function getData() {
+            var req = new XMLHttpRequest();
+            req.open("get", "https://padax.github.io/taipei-day-trip-resources/taipei-attractions.json");
+            req.onload = function () {
+                var list = JSON.parse(this.responseText);
+                console.log(list);
+
+                for (var i = 0; i < 8; i++) {
+                    var stitle = list.result.results[i].stitle;
+                    var file = list.result.results[i].file;
+                    var cutfile = file.split("http")[1];
+                    var eachfile = "http" + cutfile;
+                    console.log(eachfile);
+                    var main = document.getElementById("main");
+                    main.querySelector = "box";
+                    var div = document.createElement("div");
+                    div.className = "inbox";
+                    main.appendChild(div);
+                    var img = document.createElement("img");
+                    img.src = eachfile;
+                    var name = document.createElement("div");
+                    name.textContent = stitle;
+                    console.log(name);
+                    div.appendChild(img);
+                    div.appendChild(name);
+                }
+
+            }
+            req.send();
+        }
+    </script>
+
+    <style type="text/css">
+        body {
+            margin: 0px
+        }
+
+        .title {
+            margin: 8px;
+            font-size: 20px;
+        }
+
+        .list {
+            display: flex;
+            justify-content: flex-end;
+            position: absolute;
+            right: 8px;
+            top: 8px
+        }
+
+        .itemlist {
+            margin-left: 20px;
+            font-size: 20px;
+        }
+
+        .items {
+            color: black;
+            text-decoration: none;
+        }
+
+        .head {
+            height: 300px;
+            background-color: rgb(32, 187, 248);
+            font-size: 40px;
+            text-align: center;
+            line-height: 300px;
+            margin-bottom: 30px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            width: 1200px;
+            margin: auto;
+        }
+
+        main>.inbox {
+            width: 270px;
+            height: 235px;
+            margin: 10px;
+            background-color: rgb(32, 187, 248);
+            text-align: center;
+        }
+
+        main>.inbox>img {
+            width: 100%;
+            height: 80%;
+        }
+
+        main>.inbox>div {
+            text-align: center;
+            padding: 10px;
+            font-size: 15px;
+
+        }
+
+
+
+        @media screen and (max-width: 1200px) {
+            main {
+                width: 100%
+            }
+
+            .inbox {
+                width: 45%;
+                height: 90%;
+            }
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .head {
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                word-break: break-all;
+                line-height: 45px;
+                align-items: center;
+            }
+
+            main {
+                width: 100%
+            }
+
+            .inbox {
+                width: 90%;
+            }
+
+
+            .item {
+                width: 30px;
+                position: absolute;
+                right: 2px;
+                top: -1px;
+            }
+
+            .list {
+                width: 100%;
+                height: 30px;
+                background: url(https://github.com/peiui0807/training-camp/blob/main/week_3/ham.jpg?raw=true) no-repeat;
+            }
+
+            .itemlist {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body onload="getData();">
+
+    <div class="title">My website</div>
+    <nav class="item">
+        <div class="list">
+
+            <div class="itemlist"><a class="items" href="#">item1</a></div>
+            <div class="itemlist"><a class="items" href="#">item2</a></div>
+            <div class="itemlist"><a class="items" href="#">item3</a></div>
+            <div class="itemlist"><a class="items" href="#">item4</a></div>
+
+        </div>
+    </nav>
+
+    <div class="head">Welcome to MyHome</div>
+
+    <main id="main"></main>
+
+
+</body>
+
+</html>
