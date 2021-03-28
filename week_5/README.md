@@ -20,10 +20,10 @@
   ![3-9]( https://github.com/peiui0807/training-camp/blob/main/week_5/3-9.jpg?raw=true "9")  
   
 * demand 4  
-
+  
   1  
-  ![4-1]( https://github.com/peiui0807/training-camp/blob/main/week_5/4-1.jpg?raw=true "10")
+  ![4-1]( https://github.com/peiui0807/training-camp/blob/main/week_5/4-1.jpg?raw=true "10")  
   2  
-  ![4-2]( https://github.com/peiui0807/training-camp/blob/main/week_5/4-2.jpg?raw=true "11")
+  ![4-2]( https://github.com/peiui0807/training-camp/blob/main/week_5/4-2.jpg?raw=true "11")  
   3  
   ![4-3]( https://github.com/peiui0807/training-camp/blob/main/week_5/4-3.jpg?raw=true "12")
