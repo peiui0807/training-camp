@@ -34,10 +34,11 @@ def signup():
     signupName=request.form["signupName"]
     signupId=request.form["signupId"]
     signupPw=request.form["signupPw"]
-    searchId = "SELECT userId FROM member"
-    mycursor.execute(searchId)
+    searchId = "SELECT userId FROM member where userid = %s"
+    signupid=(signupId,)
+    mycursor.execute(searchId,signupid)
     idData = mycursor.fetchall()
-    if (signupId,) in idData:
+    if signupid in idData:
         return redirect("/error/?message=帳號已經被註冊")
     else:
         createData="INSERT INTO member (name,userId,password) VALUES (%s,%s,%s);"
@@ -54,10 +55,7 @@ def signin():
     userCheck="SELECT name,userId,password FROM member where userId = %s"
     signinid=(signinId,)
     mycursor.execute(userCheck,signinid)
-    idData = mycursor.fetchall()
-    print(idData)
-
-   
+    idData = mycursor.fetchall()   
     if len(idData) == 0:
         return redirect("/error?message=帳號或密碼輸入錯誤")
     elif signinId != idData[0][1] or signinPw != idData[0][2]:
