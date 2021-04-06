@@ -34,7 +34,7 @@ def signup():
     signupName=request.form["signupName"]
     signupId=request.form["signupId"]
     signupPw=request.form["signupPw"]
-    searchId = "SELECT userId FROM member where userid = %s"
+    searchId = "SELECT userId FROM member where userd = %s"
     signupid=(signupId,)
     mycursor.execute(searchId,signupid)
     idData = mycursor.fetchall()
