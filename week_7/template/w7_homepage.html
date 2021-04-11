@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <style type="text/css">
+        body {
+            margin: 0px
+        }
+
+        .title {
+            background-color: black;
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+            color: white;
+            font-size: 25px;
+
+        }
+
+        .sign {
+            border: 1px solid gray;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 30px;
+            padding: 10px;
+        }
+
+        .login {
+            border: 1px solid gray;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -1px;
+            text-align: center;
+            line-height: 30px;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="title">歡迎光臨，請註冊登入系統</div>
+    <form class="sign" action="/signup" method="POST">
+        <diV><b>註冊帳號</b></diV>
+        姓名 <input type="text" name="signupName" /><br />
+        帳號 <input type="text" name="signupId" /><br />
+        密碼 <input type="password" name="signupPw" /><br />
+        <button>註冊</button>
+    </form>
+
+    <form class="login" action="/signin" method="POST">
+        <div><b>登入系統</b></div>
+        帳號 <input type="text" name="signinId" /><br />
+        密碼 <input type="password" name="signinPw" /><br />
+        <button>登入</button>
+    </form>
+
+</body>
+
+</html>
